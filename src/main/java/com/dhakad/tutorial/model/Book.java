@@ -1,11 +1,23 @@
 package com.dhakad.tutorial.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
+    @Id
     private String id;
     private String name;
     private String discription;
 
+    public Book()
+    {
+
+    }
     public Book(String id, String name, String discription) {
+
+        super();
+
         this.id = id;
         this.name = name;
         this.discription = discription;

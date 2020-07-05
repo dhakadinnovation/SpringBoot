@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class BookController {
@@ -20,7 +21,7 @@ public class BookController {
 
     //this is to get book object by id
     @RequestMapping("/books/{id}")
-    public Book getBook(@PathVariable String id)
+    public Optional<Book> getBook(@PathVariable String id)
     {
         return bookService.getBook(id);
     }
