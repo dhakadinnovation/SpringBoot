@@ -1,4 +1,4 @@
-package com.dhakad.tutorial;
+package com.dhakad;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
