@@ -14,12 +14,14 @@ public class BookController {
     private BookService bookService;
 
     //this is to get all book list
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping("/books")
     public List<Book> getBooks(){
         return bookService.getBookList();
     }
 
     //this is to get book object by id
+    @CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping("/books/{id}")
     public Optional<Book> getBook(@PathVariable String id)
     {
@@ -27,6 +29,7 @@ public class BookController {
     }
 
     //this is to add book
+    @CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.POST, value = "/books/")
     public void addBook(@RequestBody Book book)
     {
@@ -34,6 +37,7 @@ public class BookController {
     }
 
     //this is to add book
+    @CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.PUT, value = "/books/{id}")
     public void updateBook(@PathVariable String id,@RequestBody Book book)
     {
@@ -41,6 +45,7 @@ public class BookController {
     }
 
     //this is to add book
+    @CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.DELETE, value = "/books/{id}")
     public void deleteBook(@PathVariable String id)
     {

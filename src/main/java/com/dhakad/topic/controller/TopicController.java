@@ -14,12 +14,14 @@ public class TopicController {
     private TopicService topicService;
 
     //this is to get all book list
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping("/topics")
     public List<Topic> getTopics(){
         return topicService.getTopicList();
     }
 
     //this is to get Topic object by id
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping("/topics/{id}")
     public Optional<Topic> getTopic(@PathVariable Long id)
     {
@@ -27,6 +29,7 @@ public class TopicController {
     }
 
     //this is to add Topic
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.POST, value = "/topics/")
     public void addTopic(@RequestBody Topic topic)
     {
@@ -34,6 +37,7 @@ public class TopicController {
     }
 
     //this is to add Topic
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
     public void updateTopic(@PathVariable Long id,@RequestBody Topic topic)
     {
@@ -41,6 +45,7 @@ public class TopicController {
     }
 
     //this is to add Topic
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
     public void deleteTopic(@PathVariable Long id)
     {

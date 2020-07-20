@@ -15,12 +15,14 @@ public class UnitController {
     private UnitService unitService;
 
     //this is to get all book list
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping("/books/{id}/units")
     public List<Unit> getUnits(@PathVariable String id){
         return unitService.getUnitList(id);
     }
 
     //this is to get book object by id
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping("/books/{bookId}/units/{id}")
     public Optional<Unit> getUnit(@PathVariable String id)
     {
@@ -28,6 +30,7 @@ public class UnitController {
     }
 
     //this is to add bookdata
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.POST, value = "/books/{bookId}/units/")
     public void addUnit(@RequestBody Unit unit, @PathVariable String bookId)
     {
@@ -36,6 +39,7 @@ public class UnitController {
     }
 
     //this is to add book
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.PUT, value = "/books/{bookId}/units/{id}")
     public void updateUnit(@PathVariable String id, @PathVariable String bookId, @RequestBody Unit unit)
     {
@@ -44,6 +48,7 @@ public class UnitController {
     }
 
     //this is to add book
+    //@CrossOrigin(origins = "http://localhost:9999")
     @RequestMapping(method = RequestMethod.DELETE, value = "/books/{bookId}/units/{id}")
     public void deleteUnit(@PathVariable String id)
     {
