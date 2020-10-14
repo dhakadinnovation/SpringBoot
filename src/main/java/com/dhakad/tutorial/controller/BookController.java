@@ -9,19 +9,21 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping(value = "/v1/")
 public class BookController {
     @Autowired
     private BookService bookService;
 
     //this is to get all book list
-    //@CrossOrigin(origins = "http://localhost:9999")
+    @CrossOrigin(origins = "*")
     @RequestMapping("/books")
     public List<Book> getBooks(){
         return bookService.getBookList();
     }
 
     //this is to get book object by id
-    @CrossOrigin(origins = "http://localhost:9999")
+   // @CrossOrigin(origins = "http://localhost:9999")
+    @CrossOrigin(origins = "*")
     @RequestMapping("/books/{id}")
     public Optional<Book> getBook(@PathVariable String id)
     {
@@ -29,7 +31,8 @@ public class BookController {
     }
 
     //this is to add book
-    @CrossOrigin(origins = "http://localhost:9999")
+   // @CrossOrigin(origins = "http://localhost:9999")
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, value = "/books/")
     public void addBook(@RequestBody Book book)
     {
@@ -37,7 +40,7 @@ public class BookController {
     }
 
     //this is to add book
-    @CrossOrigin(origins = "http://localhost:9999")
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.PUT, value = "/books/{id}")
     public void updateBook(@PathVariable String id,@RequestBody Book book)
     {
@@ -45,7 +48,8 @@ public class BookController {
     }
 
     //this is to add book
-    @CrossOrigin(origins = "http://localhost:9999")
+   // @CrossOrigin(origins = "http://localhost:9999")
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.DELETE, value = "/books/{id}")
     public void deleteBook(@PathVariable String id)
     {
