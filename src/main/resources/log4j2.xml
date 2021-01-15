@@ -1,0 +1,29 @@
+<Configuration status="info">
+    <CustomLevels>
+        <CustomLevel name="BOOK" intLevel="50"/>
+    </CustomLevels>
+    <Appenders>
+        <RollingFile name="debugRollingFileAppender" fileName="BookServer.log"
+                     filePattern="BookServer-%d{yyyy-MM-dd-HH}-%i.log">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="100"/>
+
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="info" includeLocation="true">
+            <AppenderRef ref="debugRollingFileAppender" level="info"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>
+
