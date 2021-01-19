@@ -2,6 +2,8 @@ package com.dhakad.tutorial.controller;
 
 import com.dhakad.tutorial.model.Book;
 import com.dhakad.tutorial.service.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/v1/")
 public class BookController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
+
     @Autowired
     private BookService bookService;
 
@@ -18,6 +22,7 @@ public class BookController {
     @CrossOrigin(origins = "*")
     @RequestMapping("/books")
     public List<Book> getBooks(){
+        LOGGER.info("BookController NBookList :"+bookService.getBookList().stream().toArray());
         return bookService.getBookList();
     }
 
@@ -27,6 +32,7 @@ public class BookController {
     @RequestMapping("/books/{id}")
     public Optional<Book> getBook(@PathVariable String id)
     {
+        LOGGER.info("BookController NBookList :"+bookService.getBookList().stream().toArray());
         return bookService.getBook(id);
     }
 
