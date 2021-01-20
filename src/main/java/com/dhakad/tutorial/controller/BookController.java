@@ -22,7 +22,7 @@ public class BookController {
     @CrossOrigin(origins = "*")
     @RequestMapping("/books")
     public List<Book> getBooks(){
-        LOGGER.info("BookController NBookList :"+bookService.getBookList().stream().toArray());
+        LOGGER.info("BookController NBookList :"+bookService.getBookList().stream().toArray().toString());
         return bookService.getBookList();
     }
 
@@ -32,7 +32,7 @@ public class BookController {
     @RequestMapping("/books/{id}")
     public Optional<Book> getBook(@PathVariable String id)
     {
-        LOGGER.info("BookController NBookList :"+bookService.getBookList().stream().toArray());
+        LOGGER.info("BookController GET BOOK :"+bookService.getBook(id).toString());
         return bookService.getBook(id);
     }
 
@@ -42,6 +42,7 @@ public class BookController {
     @RequestMapping(method = RequestMethod.POST, value = "/books/")
     public void addBook(@RequestBody Book book)
     {
+        LOGGER.info("BookController ADD BOOK :"+book.toString());
          bookService.addBook(book);
     }
 
@@ -50,6 +51,7 @@ public class BookController {
     @RequestMapping(method = RequestMethod.PUT, value = "/books/{id}")
     public void updateBook(@PathVariable String id,@RequestBody Book book)
     {
+        LOGGER.info("BookController UPDATE BOOK :"+"ID : "+id+" Book : "+book.toString());
         bookService.updateBook(id,book);
     }
 
@@ -59,6 +61,7 @@ public class BookController {
     @RequestMapping(method = RequestMethod.DELETE, value = "/books/{id}")
     public void deleteBook(@PathVariable String id)
     {
+        LOGGER.info("BookController Detete BOOK :"+"ID : "+id);
         bookService.deleteBook(id);
     }
 
