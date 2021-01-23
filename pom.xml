@@ -65,7 +65,7 @@
 			</exclusions>
 		</dependency>
 		<!-- to write the log in file on server -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 			<exclusions>
@@ -78,7 +78,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>
+		</dependency>-->
        <!--swagger dependency to create api document  -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -94,6 +94,19 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-data-rest</artifactId>
 			<version>1.4.5</version>
+		</dependency>
+
+		<!-- spring security  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<!-- JSON Web Token Support -->
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.7.0</version>
 		</dependency>
 
 	</dependencies>
